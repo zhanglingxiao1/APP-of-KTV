@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>Title</title>
+    <style>
+
+        body{background-color: #f0f0f0;}
+        a{text-decoration: none;color: #333;font-size: 12px}
+        .bar.bar-royal{
+            background-color: transparent;
+            background:linear-gradient(to right,#E44BF1 ,#663399);}
+        .bar .item-input-wrapper{ background-color: rgba(255,255,255,.3);}
+        .bar ::-webkit-input-placeholder{ color:#FFF;}
+        .bar .placeholder-icon{
+            color: #fff;}
+        .slider{
+            height: 200px;}
+
+        .bar > .button + .button:last-child {position:relative;right:0;top:0; margin-left: 0; padding-left: 0}
+        .banner img{width: 100%;  height:auto;}
+        .linkbar{
+            background-color: #fff;}
+        .linkbar .row  li{text-align: center;width: 100%;}
+        .linkbar .row  a img{  height: auto;width: 70%;margin-top: 10px}
+        .linkbar .row  span{display: block;font-size: 15px;margin-top: 5px;}
+        .ion-slide img{width: 100%;height: auto}
+        .linknews{
+            background-color: #fff;
+            border-top:1px solid #f0f0f0;}
+        .linknews .col-25{border-right: 1px solid #8f8f8f}
+        .linknews .col-25 img{width: 80%;height: auto;padding-top: 10px}
+        .linknews .headline{margin-left: 20px;list-style-type: disc;color: red}
+        .linknews .headline li{height: 22px;line-height: 22px}
+        .list{margin-bottom: 0px}
+        .time-go{ margin-top: 20px;
+            background-color: #fff;}
+        .time-go .col-60 h5{color:#6d3c9e;float: left;width: 100% }
+        .time-go  .col-60 h5 span{border: 1px solid #6d3c9e;margin-right:3px; }
+        .time-go  .col-60 img{margin-top: -10px}
+        .time-go .col-60  .money img{width: 80%;height: auto;float: left}
+        .time-go .col-60  .room img{width: 80%;height: auto;}
+        .time-go .col-60  .room{float: right}
+        .time-go .col-40{border-left: 1px solid #f0f0f0}
+        .time-go .col-40 h5{color: #F15858;padding-right: 20px}
+        .time-go .col-40  img{float: right;height:auto;width: 70%}
+        .goods img{height: 100px;width: auto}
+        .pull-right{float: right}
+        .goods .mainc{colol:red;font-size: 16px;  margin-right: 20px;}
+        .has-header{padding-bottom: 50px}
+        .tabs a.active{color: blue}
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp" animation="slide-left-right-ios7">
+<div class="bar bar-header bar-royal item-input">
+    <button class="button button-clear">郑州</button>
+    <div class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="text" placeholder="请输入关键字"/>
+    </div>
+    <button class="button button-icon ion-ios-sunny-outline">
+        <span style="font-size: 10px">21 <sup>o</sup>C</span></button>
+    <button class="button button-icon ion-chatbubble msg" ></button>
+</div>
+
+<div class="content scroll-content has-header ionic-scoll"  style="overflow-y: scroll">
+<ion-slide-box>
+    <ion-slide><a href=""><img src="img/banner.png" alt=""></a></ion-slide>
+    <ion-slide><a href=""><img src="img/banner.png" alt=""></a></ion-slide>
+    <ion-slide><a href=""><img src="img/banner.png" alt=""></a></ion-slide>
+</ion-slide-box>
+<div class=" linkbar">
+    <ul class="row">
+        <li class="col col25"><a href=""><img src="img/h1.png" alt=""><span>K歌团购</span></a></li>
+        <li class="col col25"><a href=""><img src="img/h2.png" alt=""><span>约K</span></a></li>
+        <li class="col col25"><a href=""><img src="img/h3.png" alt=""><span>娱乐资讯</span></a></li>
+        <li class="col col25"><a href=""><img src="img/h4.png" alt=""><span>KTV商界</span></a></li></ul>
+    <ul class="row">
+        <li class="col col25"><a href=""><img src="img/h5.png" alt=""><span>演唱会</span></a></li>
+        <li class="col col25"><a href=""><img src="img/h6.png" alt=""><span>卡卷包</span></a></li>
+        <li class="col col25"><a href=""><img src="img/h7.png" alt=""><span>名店海报</span></a></li>
+        <li class="col col25"><a href=""><img src="img/h8.png" alt=""><span>下一站</span></a></li>
+    </ul>
+</div>
+<div class=" linknews">
+    <div class="row">
+    <div class="col col-25"><a href=""><img src="img/yu.png" alt=""></a></div>
+    <div class="col col-75">
+        <ul class="headline list">
+            <li><a href="">唱功不行？K歌达人叫你5天逆袭歌神！</a></li>
+            <li><a href="">气质如何展现，会唱歌呀有没有</a></li>
+            <li><a href=""> 朋友聚会去哪里？疯狂K歌看这里！</a></li>
+        </ul></div>
+</div>
+</div>
+
+    <div class="row time-go">
+        <div class="col col-60">
+            <h5>限时抢购 <span id="day">04</span> : <span id="hours">03</span> :
+                <span id="minute">26</span></h5>
+        <p>歌迷KTV5小时嗨唱</p>
+            <div class="row">
+            <div class="col col-50 money" > <a href=""><img src="img/pi.png" alt=""></a></div>
+           <div class="col col-50 room" > <a href=""><img src="img/home.png" alt=""></a></div>
+            </div>
+        </div>
+        <div class="col col-40">
+            <h5>名店风采</h5>
+            <a href=""><img src="img/xzmm.png" alt=""></a>
+        </div>
+    </div>
+    <div class="list">
+        <div class="item-divider item-icon-left">
+            <i class="icon ion-ios-heart-outline"></i>
+            猜你喜欢
+        </div>
+    </div>
+    <div class="list goods">
+        <div class="item item-thumbnail-left">
+            <img src="img/home.png" alt=""/>
+            <h2>最爱KTV <span class="pull-right"><500</span></h2>
+            <p>像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌</p>
+            <p><span class="mainc">￥19</span> <del>166</del><span class="pull-right">已售245</span></p>
+        </div>
+        <div class="item item-thumbnail-left">
+            <img src="img/tg.png" alt=""/>
+            <h2>糖果量贩KTV <span class="pull-right"><500</span></h2>
+            <p>像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌</p>
+            <p><span class="mainc">￥19</span> <del>166</del><span class="pull-right">已售245</span></p>
+        </div>
+    </div>
+</div>
+<div class="tabs tas-icon-top">
+    <a href="" class="tab-item positive"><i class="icon ion-ios-home-outline"></i></a>
+    <a href="" class="tab-item"><i class="icon ion-ios-location-outline"></i></a>
+    <a href="" class="tab-item"><i class="icon ion-ios-cart-outline"></i></a>
+    <a href="" class="tab-item"><i class="icon ion-ios-person-outline"></i></a>
+</div>
+<script>
+    var app=angular.module("myapp",["ionic"])
+            .controller("mychar",function($scope){
+
+            })
+</script>
+<script>
+   var day=document.getElementById("day");
+   var hours=document.getElementById("hours");
+   var minute=document.getElementById("minute")
+    function mytime(){
+        var i=18000;
+        return function(){
+            i--;
+            var dis=i;
+            var dh=Math.floor(dis/(60*60));
+            var dm=Math.floor((dis-dh*(60*60))/60);
+            var dS=Math.floor((dis-dh*(60*60))-(dm*60));
+            day.innerHTML=dh;
+            hours.innerHTML=dm;
+            minute.innerHTML=dS;
+//          lasttime.innerHTML=dd+"天"+dh+"小时"+dm+"分钟"+dS+"秒";
+        }
+    }
+    setInterval(mytime(),1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+    <title>店铺详情</title>
+    <style>
+
+        .pt10{padding-top: 10px}
+        .pt30{padding-top: 30px}
+        .zise{color: #663399}
+        .f2f2{color: #F2F2F2}
+        .mr{margin-right: 10px}
+        .f12{font-size: 12px}
+        body{
+            background-color: #f0f0f0;}
+        .star{height: 15px;width: 15px}
+    .pull-right{float: right}
+    .banner{position: relative;
+        background-image: url(img/house.png);width: 100%;height: 190px;
+        background-size:100% auto;}
+    .banner>img{width: 100%;height: auto}
+    .banner .like img{height: 40px;width: auto;margin-top: 10px;margin: 10px}
+    .content{padding-bottom: 100px}
+    .banner .item h2{color: #fff;}
+    .banner .navbar{height: 70px;  background-color: rgba(0,0,0,.5);color: #fff;
+        border:none;position: absolute;bottom: 0;left: 0}
+    .banner .logo{height: 70px;width: auto;margin-top: -40px}
+    .banner .navbar .col-50 img{height: 15px;  width: 15px;}
+    .banner .navbar .col-20 img{height: 25px;
+        width: 25px;}
+    .banner .navbar .col-20 span{display: block}
+    .peoplebug img{height: 15px;width: 15px}
+    .money{font-size: 26px;}
+    .else p{color: #F15A5A}
+    .talk{margin-bottom: 0px}
+        .picitem{border-bottom: 1px solid #fff}
+        .pinlun{
+            background-color: #fff;margin-top: -1px}
+        .pinlun img{height: 80px;width: auto;margin-right: 20px}
+
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp">
+<div class="content ionic-scroll scroll-content " style="overflow-y: scroll">
+    <div class="scroll">
+<div class="banner">
+<p class="padding like"><span class=""><img src="img/detail-back.png" alt=""></a></span>
+    <span class="pull-right"><img src="img/detail-share.png" alt=""></a></span></p>
+    <div class="navbar row ">
+    <div class=" col col-30 text-center"><a href=""><img src="img/detail-logo.png" class="logo"></a></div>
+<div class="col col-50">
+    <P>麦卡量贩KTV</P>
+            <p><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt=""> <span>4分</span></p></div>
+<div class="col col-20 text-center "><img src="img/xin.png" alt=""> <span>客服</span></div></div>
+</div>
+
+    <div class="list">
+        <div class="item item-text-wrap item-icon-left item-icon-right">
+            <i class=" icon  ion-ios-location-outline"></i>
+            <h4>郑州市管城区金水区花园路1号丹尼斯百货花园店B1楼近农业路1楼近农业路</h4>
+             <i class=" icon  ion-ios-telephone positive"><a href=""> </a></i>
+        </div>
+    </div>
+    <div class="list buy">
+        <div class="item peoplebug"><h3><img src="img/buy-icon.png" alt="" class="mr" class="">团购（3）</h3></div>
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv1.png" alt=""/>
+            <h3 class="pt10">歌秀主题量贩KTV（农业路） </h3>
+            <p class="smallfont"><span class=" zise">¥</span><span class="money zise">158 </span>
+                <del>741</del><span class="pull-right f12">已购323</span></p>
+        </a>
+
+
+
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv2.png" alt=""/>
+            <h3 class="pt10">苏格廖思KTV </h3>
+            <p><span class="smallfont zise">¥</span><span class="money zise">158 </span>
+                <del>741</del><span class="pull-right f12">已购323</span></p>
+        </a>
+        <div class="item text-center else"><p >查看其他一个团购</p></div>
+    </div>
+
+        <div class="list talk">
+            <div class="item"><h3>买家点评（910）</h3></div>
+            <div class="item item-thumbnail-left picitem">
+                <img src="img/detail-head.png" alt="">
+                <h3 class="pt10">落月姚青</h3>
+                <p class="pt10">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/star.png" alt="" class="star">
+                    <span class="pull-right">2016-01-06</span>
+                </p>
+
+            </div>
+            <div class="padding pinlun ">
+                <p class="  pt10 ">发放分发放发放速度发放度发放速度似懂非道夫分发放速度
+                    似懂非懂阿道</p>
+                <p class=" pt10 "><img src="img/detail5.fw.png" alt="">
+                    <img src="img/detail6.fw.png" alt="">
+                    <img src="img/detail7.fw.png" alt=""></p></div>
+            <div class="item item-thumbnail-left picitem">
+                <img src="img/detail-head2.png" alt="">
+                <h3 class="pt10">落月姚青</h3>
+                <p class="pt10">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/star.png" alt="" class="star">
+                    <span class="pull-right">2016-01-06</span>
+                </p>
+            </div>
+            <div class="padding pinlun ">
+                <p class="  pt10 ">发放分发放发放速度发放度发放速度似懂非道夫分发放速度
+                    似懂非懂阿道</p>
+                <p class=" pt10 "><img src="img/detail2.fw.png" alt="">
+                    <img src="img/detail3.fw.png" alt="">
+                    <img src="img/detail4.png" alt=""></p></div>
+
+            <div class="item text-center else"><p >查看其他评价</p></div>
+        </div>
+
+        <div class="list goods">
+            <div class="item item-divider item-icon-left">
+                <i class="icon ion-ios-location-outline"></i>
+                <h3>附近团购</h3>
+            </div>
+            <div class="item item-thumbnail-left">
+                <img src="img/home.png" alt=""/>
+                <h2>最爱KTV <span class="pull-right"><500</span></h2>
+                <p>像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌</p>
+                <p><span class="smallfont zise">¥</span><span class="money zise">158 </span>
+                    <del>741</del><span class="pull-right f12">已购323</span></p>
+            </div>
+            <div class="item item-thumbnail-left">
+                <img src="img/tg.png" alt=""/>
+                <h2>糖果量贩KTV <span class="pull-right"><500</span></h2>
+                <p>像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌</p>
+                <p><span class="smallfont zise">¥</span><span class="money zise">158 </span>
+                    <del>741</del><span class="pull-right f12">已购323</span></p>
+            </div>
+        </div>
+
+</div>
+</div>
+</body>
+</html>

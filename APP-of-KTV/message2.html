@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title>对话框</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<style type="text/css">
+		body{font-size: 12px;background-color: #f2f2f2;}
+			.fr{float: right;}
+			.fl{float: left;}
+			.mycolor{background: linear-gradient(to right,#e44bf1,#663399 );}
+			.while{color: #FFFFFF;}
+			.bgwhite{background-color: #FFFFFF;}
+			.item{background-color: #f2f2f2;}
+			.item-input-wrapper{background-color: rgba(255,255,255,.3);}
+			.bar ::-webkit-input-placeholder{ color: #fff;}
+			.noboreder{border: none;}
+			.lilast{border-bottom: none;}
+			.lifirst{border-top: none;}				
+			.item-divider.tit{color: #999;padding-top: 15px;padding-bottom: 15px;}
+			.item-divider.tit i{font-size: 1.2em;vertical-align: middle;margin-right:10px;}
+			.list {background-color: #FFFFFF;}
+			.li{color: #666666;margin-left: 20px;margin-right: 20px;border-left: none;border-right: none;padding-left: 0;padding-right: 0;}
+			.li i{color: #999999;right: -10px;}
+			.item{padding-top: 25px;line-height: 40px;}
+			.time{color: #666666;padding-top: 10px;}
+			.item-avatar-left>img:first-child, .item-avatar-right>img:first-child{vertical-align: middle;top: 25px;}
+			.item span{display: inline-block;background-color: #CCCCCC;padding:0 10px;border-radius: 5px;font-size: 14px;position: relative;}
+			.item-avatar-right span:before{content: "";display: inline-block;width: 0;height: 0;border:6px solid transparent;position: absolute;top: 40%;right:-12px;border-left-color: #CCCCCC;}
+			.item-avatar-left span:before{content: "";display: inline-block;width: 0;height: 0;border:6px solid transparent;position: absolute;top: 40%;border-right-color: #CCCCCC;left: -12px;}
+		</style>
+		<script type="text/javascript"src="js/ionic.bundle.js">			
+		</script>		
+	</head>
+	<body>
+		<div class="bar barheader mycolor item-input">
+			<button class="button button-icon ion-ios-arrow-back while"></button>
+		<h3 class="title while">消息</h3>
+		</div>
+		<div class="content scroll-content has-header"style="overflow-y: scroll;">		
+			<h3 class="titile time text-center">02-24 16:06</h3>
+			<div class="list  mylist bggreay">
+			<div class="item item-avatar-right noboreder">
+				<img src="img/shuaige.png"/>
+				<span class="fr">?</span>
+			</div>
+			<div class="item item-avatar-left noboreder">
+				<img src="img/kefu.png"/>
+				<span class="">您好，有什么可以帮助您的么？</span>
+			</div>
+			</div>			
+			</div>
+	</body>
+</html>

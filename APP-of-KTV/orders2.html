@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确认订单</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script type="text/javascript" src="js/ionic.bundle.js">
+		</script>
+		
+		<style type="text/css">
+		body{background-color: #E0E0E0;}
+			.bar-header{background: linear-gradient(to right,#E44BF1,#8225A7);}
+			.ion-ios-search:before{font-size: 25px;color: #fff;}
+			.item-input-wrapper{width: 50%;border: none;background-color: rgba(255,255,255,.4);border-radius: 5px;margin-left: 5%;color: #fff;}
+		.total{margin-top: 25px;}
+		#subm{background-color: #E0E0E0;}
+.ion-item{font-size: 14px;}
+
+		</style>
+	</head>
+	<body ng-app="ionicApp" ng-controller="myCtrl">
+		<div class="bar bar-header item-input-inset">
+				<button class="button icon ion-chevron-left button-outline" style="color: #fff;"></button>
+				<h3 class="title" style="color: #fff;">确认订单</h3>
+		</div>
+		<div class="content scroll-content ionic-scroll has-header" style="overflow-y:scroll">
+			<ion-list>
+				<ion-item>
+					麦嘎量贩式KTV158元套餐欢唱时段2选1 <span style="float:right">￥158</span>
+				</ion-item>
+				<ion-item>
+					数量 <span style="float:right">
+						<input type="button" value="-" style="border:none;height: 30px;width: 30px;" ng-click="minus()"/>
+						<input type="button" value="1" style="border:none;height: 30px;width: 30px;" class="num"/>
+						<input type="button" value="+" style="border:none;height: 30px;width: 30px;" ng-click="plus()"/>
+					</span>
+				</ion-item>
+				<ion-item>
+					优惠券 <span style="float:right;color: red;">-5  &nbsp;></span>
+				</ion-item>
+					<ion-item>
+					小计 <span style="float:right" class="money">￥153</span>
+				</ion-item>
+			</ion-list>
+			<ion-list>
+				<ion-item class="total">
+					订单合计<span style="float:right" class="money">￥153</span>
+				</ion-item>
+			</ion-list>
+			<ion-list>
+				<ion-item id="subm">
+					<button class="button button-block button-royal" >提交订单</button>
+				</ion-item>
+			</ion-list>
+
+		</div>
+		<script type="text/javascript">
+			var app=angular.module("ionicApp",["ionic"])
+			.controller("myCtrl",function($scope){
+				var num=document.getElementsByClassName("num")[0];
+				var money=document.getElementsByClassName("money");
+				var str=num.value;
+				$scope.plus=function(){
+				str++;
+				num.value=str;
+				for(var i=0;i<money.length;i++){
+				money[i].innerHTML="￥"+153*str;
+				}
+				}
+				$scope.minus=function(){
+					if(str>1){
+					str--;
+					num.value=str;
+					for(var i=0;i<money.length;i++){
+				money[i].innerHTML="￥"+153*str;
+				}
+					}else{
+						str=1;
+						num.value=str;
+						
+					}
+				}
+				
+				
+			})
+		</script>
+	</body>
+</html>

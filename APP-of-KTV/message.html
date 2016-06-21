@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>Title</title>
+    <style>
+        .pull-right{float: right}
+        body{background-color: #f0f0f0;padding-top: 43px}
+        a{text-decoration: none;color: #333;font-size: 12px}
+        .bar.bar-royal{
+            background-color: transparent;
+            background:linear-gradient(to right,#E44BF1 ,#663399);}
+        .bar .item-input-wrapper{ background-color: rgba(255,255,255,.3);}
+
+        .content .list .item-divider, .item-divider h3 {color:#aaa;}
+        .content .list .item-divider i{font-size: 20px}
+        .content .list .junk{color: red;}
+        .seachreturn{color: #aaa}
+        .bar-header .button-light{color: #fff}
+        .bar-header .button-light:hover{color: #fff}
+        .content .list a{padding-top: 20px;}
+        .content .list a h2{padding-bottom: 10px}
+        .content .list a h2>span{font-size: 12px}
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp" animation="slide-left-right-ios7">
+<div class="bar bar-header bar-royal ">
+    <button class="button button-icon button-light ion-ios-arrow-left">
+    </button>
+    <h3 class="title">消息</h3>
+</div>
+<div class="content  ">
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/mess/msg1.png" alt=""/>
+        <h2>皇声音响 <span class="pull-right">2016-02-22</span></h2>
+        <p>你好有什么可以帮助你的？</p></a>
+
+        <a href="#" class="item item-thumbnail-left"><img src="img/mess/msg2.png" alt=""/>
+            <h2>皇声音响 <span class="pull-right">2016-02-22</span></h2>
+            <p>你好有什么可以帮助你的？</p></a>
+
+        <a href="#" class="item item-thumbnail-left"><img src="img/mess/msg3.png" alt=""/>
+            <h2>皇声音响 <span class="pull-right">2016-02-22</span></h2>
+            <p>你好有什么可以帮助你的？</p></a>
+
+        <a href="#" class="item item-thumbnail-left"><img src="img/mess/msg4.png" alt=""/>
+            <h2>皇声音响 <span class="pull-right">2016-02-22</span></h2>
+            <p>你好有什么可以帮助你的？</p></a>
+    </div>
+ </div>
+
+
+<script>
+    var app=angular.module("myapp",["ionic"])
+            .controller("mychar",function($scope){
+
+            })
+</script>
+</body>
+</html>

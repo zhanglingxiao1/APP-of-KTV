@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>Title</title>
+    <style>
+        .pt10{padding-top: 10px}
+        .star{height: 15px;width: auto}
+        .else p{color: #F15A5A}
+        .pull-right{float: right}
+        body{background-color: #f0f0f0;padding-top: 43px}
+        a{text-decoration: none;color: #333;font-size: 12px}
+        .bar.bar-royal{
+            background-color: transparent;
+            background:linear-gradient(to right,#E44BF1 ,#663399);}
+        .bar .item-input-wrapper{ background-color: rgba(255,255,255,.3);}
+        .bar-header .button-light{color: #fff}
+        .bar-header .button-light:hover{color: #fff}
+
+        .picitem{border-bottom: 1px solid #fff}
+        .pinlun{
+            background-color: #fff;margin-top: -1px}
+        .pinlun img{height: 80px;width: auto;margin-right: 20px}
+
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp" animation="slide-left-right-ios7">
+<div class="bar bar-header bar-royal ">
+    <button class="button button-icon button-light ion-ios-arrow-left">
+    </button>
+    <h3 class="title">选择城市</h3>
+</div>
+<div class="list talk">
+    <div class="item"><h3>买家点评（910）</h3></div>
+    <div class="item item-thumbnail-left picitem">
+        <img src="img/detail-head.png" alt="">
+        <h3 class="pt10">落月姚青</h3>
+        <p class="pt10">
+            <img src="img/blue.fw.png" alt="" class="star">
+            <img src="img/blue.fw.png" alt="" class="star">
+            <img src="img/blue.fw.png" alt="" class="star">
+            <img src="img/blue.fw.png" alt="" class="star">
+            <img src="img/star.png" alt="" class="star">
+            <span class="pull-right">2016-01-06</span>
+        </p>
+
+    </div>
+    <div class="padding pinlun ">
+        <p class="  pt10 ">发放分发放发放速度发放度发放速度似懂非道夫分发放速度
+            似懂非懂阿道</p>
+        <p class=" pt10 "><img src="img/detail5.fw.png" alt="">
+            <img src="img/detail6.fw.png" alt="">
+            <img src="img/detail7.fw.png" alt=""></p></div>
+    <div class="item item-thumbnail-left picitem">
+        <img src="img/detail-head2.png" alt="">
+        <h3 class="pt10">落月姚青</h3>
+        <p class="pt10 ">
+            <img src="img/blue.fw.png" alt="" class="star">
+            <img src="img/blue.fw.png" alt="" class="star">
+            <img src="img/blue.fw.png" alt="" class="star">
+            <img src="img/blue.fw.png" alt="" class="star">
+            <img src="img/star.png" alt="" class="star">
+            <span class="pull-right">2016-01-06</span>
+        </p>
+    </div>
+    <div class="padding pinlun ">
+        <p class="  pt10 ">发放分发放发放速度发放度发放速度似懂非道夫分发放速度
+            似懂非懂阿道</p>
+        <p class=" pt10 "><img src="img/detail2.fw.png" alt="">
+            <img src="img/detail3.fw.png" alt="">
+            <img src="img/detail4.png" alt=""></p></div>
+
+    <div class="item text-center else"><p >查看其他评价</p></div>
+</div>
+<script>
+    var app=angular.module("myapp",["ionic"])
+            .controller("mychar",function($scope){
+
+            })
+</script>
+</body>
+</html>

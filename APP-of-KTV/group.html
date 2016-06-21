@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+    <title>店铺详情</title>
+    <style>
+        a{text-decoration: none}
+        .bgcf{  background-color: #fff;}
+        .pt10{padding-top: 10px}
+        .pt30{padding-top: 30px}
+        .zise{color: #663399}
+        .f2f2{color: #F2F2F2}
+        .mr10{margin-right: 10px}
+        .f12{font-size: 12px}
+        .dsb{display: block}
+        body{  background-color: #f0f0f0;}
+        .star{height: 15px;width: 15px}
+    .pull-right{float: right}
+    .banner{position: relative;
+        background-image: url(img/house.png);width: 100%;height: 190px;
+        background-size:100% auto;}
+    .banner>img{width: 100%;height: auto}
+    .banner .like img{height: 40px;width: auto;margin-top: 10px;margin: 10px}
+
+    .banner .item h2{color: #fff;}
+    .banner .navbar{height: 70px;  background-color: rgba(0,0,0,.5);color: #fff;
+        border:none;position: absolute;bottom: 0;left: 0}
+    .banner .logo{height: 70px;width: auto;margin-top: -40px}
+    .banner .navbar .col-50 img{height: 15px;  width: 15px;}
+    .banner .navbar .col-20 img{height: 25px;
+        width: 25px;}
+    .banner .navbar .col-20 span{display: block}
+    .peoplebug img{height: 15px;width: 15px}
+    .money{font-size: 26px;}
+    .else p{color: #F15A5A}
+        .picitem{border-bottom: 1px solid #fff}
+        .pinlun{
+            background-color: #fff;margin-top: -1px}
+        .pinlun img{height: 80px;width: auto;margin-right: 20px}
+.talk{margin-bottom: 0}
+    .dollar{
+        height: 50px;
+        background-color: #fff;
+        margin-bottom: 10px;line-height: 30px;
+    }
+        .dollar .zise{font-size: 28px;margin-right: 20px}
+        .consume{height: 40px;
+            background-color: #fff;
+            margin-top: 10px;}
+        .consume .combo{border-right: 1px solid #f0f0f0}
+        .consume .col-50.active{color:#663399;border-bottom: 2px solid #663399;height: 35px }
+        .consume{border-bottom: 1px solid #aaa}
+        .comboc .list1, .remark , .qita{border-bottom: 1px solid #aaa}
+        .comboc .list2{padding-top: 10px} .remark,.comboc2{padding-left:20px;padding-right: 20px; }
+        .remark li{ font-size: 10px;color: #6d3c9e;list-style-type: disc;}
+        .remark li span{color:#777 }
+        .qita{  height: 30px;padding-left: 0;padding-right: 0;margin-left: 0;}
+        .comboc2{padding-left:30px;padding-right:30px; }
+        .comboc2 ul{
+            margin-bottom: 10px;}
+        .comboc2 ul li{font-size: 12px;color: #6d3c9e;list-style-type: disc;}
+        .comboc2 li span{color:#777 }
+        .comboc2 p{margin-bottom: 0} .bar-footer{height: 50px;padding: 0}
+        .bar-footer img{height: 20px;width: auto;}
+        .bar-footer .col{padding: 5px;}  .bar-footer button{border-radius: 0px}
+        .bar-footer .col a span{font-size: 12px}
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp">
+<div class="content ionic-scroll scroll-content has-footer" style="overflow-y: scroll">
+    <div class="scroll">
+<div class="banner">
+<p class="padding like"><span class=""><img src="img/detail-back.png" alt=""></a></span>
+    <span class="pull-right"><img src="img/detail-share.png" alt=""></a></span></p>
+    <div class="navbar row ">
+    <div class=" col col-30 text-center"><a href=""><img src="img/detail-logo.png" class="logo"></a></div>
+<div class="col col-50">
+    <P>麦卡量贩KTV</P>
+            <p><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt=""> <span>4分</span></p></div>
+<div class="col col-20 text-center "><img src="img/xin.png" alt=""> <span>客服</span></div></div>
+</div>
+        <div class="row text-center dollar">
+            <div class="col col-70">
+            <p> <span class="zise" >¥158</span><del>¥741</del>
+
+            </div>
+            <div class="col col-30">
+                <p class="pull-right"><i class="icon ion-ios-checkmark-outline assertive mr10">过期退</i>
+                    <i class="icon ion-android-person assertive mr10">已售出</i></p>
+            </div>
+        </div>
+
+    <div class="list">
+        <div class="item item-text-wrap item-icon-left item-icon-right">
+            <h2>麦卡量贩式KTV</h2>
+            <i class=" icon  ion-ios-location-outline"></i>
+            <h4>郑州市管城区金水区花园路1号丹尼斯百货花园店B1楼近农业路1楼近农业路</h4>
+             <i class=" icon  ion-ios-telephone positive"><a href=""> </a></i>
+        </div>
+        <div class="row text-center consume">
+            <div class="col col-50 combo active">套餐内容</div>
+            <div class="col col-50 expense">消费提示</div>
+        </div>
+        <div class="comboc padding bgcf " style="display: block">
+            <div class="row text-center  list1">
+                <div class="col">时间/包厢</div>
+                <div class="col">套餐内容</div>
+                <div class="col">团购劵数</div>
+            </div>
+            <div class="row text-center list2 pt10" >
+                <div class="col">12:00-19:00(小包/中包)</div>
+                <div class="col">6小时欢唱</div>
+                <div class="col">1张</div>
+            </div>
+            <div class="row text-center list3 pt10" >
+                <div class="col">19:00-03:00(小包/中包)</div>
+                <div class="col">3小时欢唱</div>
+                <div class="col">1张</div>
+            </div>
+            <ul class=" remark">
+                <li><span>备注：本套餐周日至周四22点前进场免到1点;22点以后进场到打烊</span></li>
+                <li><span>特殊节假日期间，如需使用团购可先咨询门店是否正常接待</span></li>
+            </ul>
+            <h5 class="qita">其他（5选5）</h5>
+            <div class="row ">
+                <div class="col col-60">R牌啤酒</div>
+                <div class="col col-20">12听</div>
+                <div class="col col-20">144元</div>
+            </div>
+            <div class="row ">
+                <div class="col col-60">果盘</div>
+                <div class="col col-20">1份</div>
+                <div class="col col-20">38元</div>
+            </div>
+            <div class="row ">
+                <div class="col col-60">爆米花</div>
+                <div class="col col-20">1份</div>
+                <div class="col col-20">18元</div>
+            </div>
+            <div class="row ">
+                <div class="col col-60">小吃</div>
+                <div class="col col-20">2份</div>
+                <div class="col col-20">16元</div>
+            </div>
+            <div class="row ">
+                <div class="col col-60">航空杯</div>
+                <div class="col col-20">1套</div>
+                <div class="col col-20">5元</div>
+            </div>
+        </div>
+        <div class="comboc2 padding bgcf" style="display: none">
+            <p>有效期：</p>
+            <ul>
+                <li><span>2016年02月5日至2016年04月12日（周末法定假日通用）</span></li>
+            </ul>
+            <p>使用时间：</p>
+            <ul>
+                <li><span>10:00-22:00</span></li>
+            </ul>
+            <p>预约提示：</p>
+            <ul>
+                <li><span>无需预约直接消费</span></li>
+            </ul>
+            <p>使用规则：</p>
+            <ul>
+                <li><span>每次消费不限糯米张数</span></li>
+                <li><span>每张糯米卷不限使用人数</span></li>
+                <li><span>仅大厅使用，无包房</span></li>
+                <li><span>团购用户不享受店内其他优惠</span></li>
+            </ul>
+            <p>温馨提示：</p>
+            <ul>
+                <li><span>商家免费提供打包服务</span></li>
+                <li><span>本单堂外带均可</span></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+        <div class="list talk">
+            <div class="item"><h3>买家点评（910）</h3></div>
+            <div class="item item-thumbnail-left picitem">
+                <img src="img/detail-head.png" alt="">
+                <h3 class="pt10">落月姚青</h3>
+                <p class="pt10">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/star.png" alt="" class="star">
+                    <span class="pull-right">2016-01-06</span>
+                </p>
+
+            </div>
+            <div class="padding pinlun ">
+                <p class="  pt10 ">发放分发放发放速度发放度发放速度似懂非道夫分发放速度
+                    似懂非懂阿道</p>
+                <p class=" pt10 "><img src="img/detail5.fw.png" alt="">
+                    <img src="img/detail6.fw.png" alt="">
+                    <img src="img/detail7.fw.png" alt=""></p></div>
+            <div class="item item-thumbnail-left picitem">
+                <img src="img/detail-head2.png" alt="">
+                <h3 class="pt10">落月姚青</h3>
+                <p class="pt10">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/blue.fw.png" alt="" class="star">
+                    <img src="img/star.png" alt="" class="star">
+                    <span class="pull-right">2016-01-06</span>
+                </p>
+            </div>
+            <div class="padding pinlun ">
+                <p class="  pt10 ">发放分发放发放速度发放度发放速度似懂非道夫分发放速度
+                    似懂非懂阿道</p>
+                <p class=" pt10 "><img src="img/detail2.fw.png" alt="">
+                    <img src="img/detail3.fw.png" alt="">
+                    <img src="img/detail4.png" alt=""></p></div>
+
+            <div class="item text-center else"><p >查看其他评价</p></div>
+        </div>
+
+        <div class="list goods">
+            <div class="item item-divider item-icon-left">
+                <i class="icon ion-ios-location-outline"></i>
+                <h3>附近团购</h3>
+            </div>
+            <div class="item item-thumbnail-left">
+                <img src="img/home.png" alt=""/>
+                <h2>最爱KTV <span class="pull-right"><500</span></h2>
+                <p>像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌</p>
+                <p><span class="smallfont zise">¥</span><span class="money zise">158 </span>
+                    <del>741</del><span class="pull-right f12">已购323</span></p>
+            </div>
+            <div class="item item-thumbnail-left">
+                <img src="img/tg.png" alt=""/>
+                <h2>糖果量贩KTV <span class="pull-right"><500</span></h2>
+                <p>像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌像一首老歌</p>
+                <p><span class="smallfont zise">¥</span><span class="money zise">158 </span>
+                    <del>741</del><span class="pull-right f12">已购323</span></p>
+            </div>
+        </div>
+
+</div>
+</div>
+<div class="bar-footer bar row  text-center">
+    <div class="col "><a href=""><img src="img/scicon.png" alt=""><br><span class="dsb">收藏</span></a></div>
+    <div class="col "><a href=""><img src="img/kficon.png" alt=""><span class="dsb">客服</span></a></div>
+<button class="button button-royal col col-50"><span class="smallfont light">¥</span>
+    <span class="money light">158 </span>立即购买</button>
+</div>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+    $(".combo").click(function(){
+        $(".comboc").css("display","block");
+        $(".comboc2").css("display","none");
+        $(".combo").addClass("active");
+        $(".expense").removeClass("active");
+    })
+    $(".expense").click(function(){
+        $(".comboc2").css("display","block");
+        $(".comboc").css("display","none");
+        $(".combo").removeClass("active");
+        $(".expense").addClass("active");
+    })
+</script>
+</body>
+</html>

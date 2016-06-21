@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>登录</title>
+    <style>
+        .pull-right{float: right}
+    body{
+        background-image: url(img/bgc.png);}
+    .content{padding-top: 200px;width: 80%;margin-left: 10%;}
+ .content .item-input{
+     background-color: #fff;border-radius: 50px;height: 50px;margin-top: 30px}
+    .content .item-input img{height: 30px;width: auto;
+        padding-top: 7px;}
+    .content .item-input input{
+        padding:30px;}
+        .content .button-full{margin-top: 40px;border-radius: 50px;
+            background-color: #663399;color: #fff;border: #663399}
+        .content p a{
+            color: #fff; text-decoration: none}
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+    <script src="js/angular.min.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp" animation="slide-left-right-ios7" >
+    <div class="content padding" >
+        <form action="" name="myFrom" novalidate>
+        <div class="item-input">
+            <i class=" placeholder-icon"><img src="img/phone.png" alt=""></i>
+            <input type="text" placeholder="请输入手机号" ng-minleng= "{6}" ng-maxlength="{11}"
+                   ng-pattern="/[0-9]/"/>
+        </div>
+        <div class="item-input password">
+            <i class=" placeholder-icon"><img src="img/lock.png" alt=""></i>
+            <input type="password" placeholder="请输入密码"/>
+        </div>
+        <button class="button button-full button-royal">登录</button></p>
+        <p><a href=""><span >账户注册</span></a> <a href=""></a><a href="" class="pull-right">找回密码</a></p>
+        </form>
+    </div>
+
+<script>
+    var app=angular.module("myapp",["ionic"])
+            .controller("mychar",function($scope){
+            $scope.data={}
+            })
+</script>
+</body>
+</html>

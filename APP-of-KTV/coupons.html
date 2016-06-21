@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>确认订单</title>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script type="text/javascript" src="js/ionic.bundle.js">
+		</script>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js">
+		</script>
+		<style type="text/css">
+		body{background-color: #E0E0E0;}
+			.bar-header{background: linear-gradient(to right,#E44BF1,#8225A7);}
+			.ion-ios-search:before{font-size: 25px;color: #fff;}
+			.item-input-wrapper{width: 50%;border: none;background-color: rgba(255,255,255,.4);border-radius: 5px;margin-left: 5%;color: #fff;}
+		.total{margin-top: 25px;}
+		#subm{background-color: #E0E0E0;}
+.ion-item{font-size: 14px;}
+.row-nav{width: 90%;padding-left: 10%;}
+.col-50 a{text-decoration: none;display: block;width: 100%;height: 32px;line-height:32px;text-align: center;color: #333;background-color: #fff;border-bottom: 2px solid #663399;}
+.col-50 .able{border-radius: 5px 0 0 5px;}
+.col-50 .disable{border-radius: 0px 5px 5px 0px;}
+.col-50 .active{background-color: #663399;color: #FFF;}
+.tab{background-color: #fff;height: 115px;padding: 0;border-radius: 5px;margin-top: 20px;position: relative;}
+.tab img{height: 115px;}
+.tab p{font-size: 12px;}
+.col-70{padding-top: 15px; float: left;padding-left: 10px;}
+.col-70 h3{color: #F15A5A;}
+#right{width: 40px;height: 40px;position: absolute;right: 0;top: 0;}
+.tab3{position: relative;}
+#right1{width: 40px;height: 40px;position: absolute;right: 0;top: 0;}
+.tab2{background-color: #fff;height: 115px;padding: 0;border-radius: 5px;margin-top: 20px!important;}
+.tab2 p{font-size: 12px;}
+.tab2 .col-70{padding-top: 15px; float: left;padding-left: 10px;}
+.tab2 img{height: 115px;}
+.tab2 .col-70 h3{color: #666666;}
+		</style>
+	</head>
+	<body ng-app="ionicApp" ng-controller="myCtrl">
+		<div class="bar bar-header item-input-inset">
+				<button class="button icon ion-chevron-left button-outline" style="color: #fff;"></button>
+				<h3 class="title" style="color: #fff;">卡券包</h3>
+		</div>
+		<div class="content padding scroll-content ionic-scroll has-header" style="overflow-y:scroll">
+			<ion-list>
+					<div class="row text-center row-nav">
+					<div class="col-50"><a href="" class="able active">可使用（2）</a></div>
+					<div class="col-50"><a href="" class="disable">无可用（2）</a></div>
+					</div>
+			</ion-list>
+			
+			<ion-list>
+    <div class="row tab tab1">
+    	<img src="img/right.png" alt="" id="right" />
+    	<div class="col-30"><img src="img/hui.png" alt=""/></div>
+    	<div class="col-70"><h3>满99减5</h3>
+      <p>适用范围：正大KTV设备公司</p>
+      <p>截止日期：2016.05.16</p></div>
+    </div>
+    </ion-list>
+   
+    
+   <ion-list>
+    <div class="row tab tab3">
+    	<img src="img/right.png" alt="" id="right1" style="display: none;"/>
+    	<div class="col-30"><img src="img/hui.png" alt=""/></div>
+    	<div class="col-70"><h3>满99减5</h3>
+      <p>适用范围：正大KTV设备公司</p>
+      <p>截止日期：2016.05.16</p></div>
+    </div>
+    </ion-list>
+    
+    <div class="row tab2" style="display: none;">
+    	<div class="col-30"><img src="img/hui2.png" alt=""/></div>
+    	<div class="col-70"><h3>满99减5</h3>
+      <p>适用范围：正大KTV设备公司</p>
+      <p>截止日期：2016.05.16</p></div>
+    </div>
+ 
+    <div class="row tab2" style="display: none;">
+    	<div class="col-30"><img src="img/hui2.png" alt=""/></div>
+    	<div class="col-70"><h3>满99减5</h3>
+      <p>适用范围：正大KTV设备公司</p>
+      <p>截止日期：2016.05.16</p></div>
+    </div>
+ 
+		</div>
+		<script type="text/javascript">
+			var app=angular.module("ionicApp",["ionic"])
+			.controller("myCtrl",function($scope){
+				$(".able").click(function(){
+					$(".able").addClass("active");
+					$(".disable").removeClass("active");
+					$(".tab").show();
+					$(".tab2").hide();
+				})
+				$(".disable").click(function(){
+					$(".disable").addClass("active");
+					$(".able").removeClass("active");
+					$(".tab2").show();
+					$(".tab").hide();
+					
+				})
+				
+				$(".tab3").click(function(){
+					$("#right1").toggle();
+				})
+				$(".tab1").click(function(){
+					$("#right").toggle();
+				})
+				
+				
+			})
+		</script>
+	</body>
+</html>

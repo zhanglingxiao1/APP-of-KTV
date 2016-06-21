@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>团购</title>
+    <style>
+        .pull-right{float: right}
+        body{background-color: #f0f0f0;padding-top: 43px}
+        a{text-decoration: none;color: #333;font-size: 12px}
+        .bar.bar-royal{
+            background-color: transparent;
+            background:linear-gradient(to right,#E44BF1 ,#663399);}
+        .bar .item-input-wrapper{ background-color: rgba(255,255,255,.3);}
+        .listseach .col.active{color: #663399}
+        .listseacha{position: fixed;left: 0;top:80px;z-index: 10;width: 100%;display: none;height: 100%;
+            background-color: rgba(0,0,0,.4); }
+        .listseacha .item{font-size: 14px }
+        .listseachb{position: fixed;left: 0;top:80px;z-index: 10;width: 100%;display: none;height: 100%;
+            background-color: rgba(0,0,0,.4);}
+        .listseachb .item{font-size: 14px ; }
+        .listseacha li.active,.listseachb li.active{color:#663399}
+
+        .content .list{margin-bottom:10px}
+        .content .list .item-divider, .item-divider h3 {color:#aaa;}
+        .content .list .item-divider i{font-size: 20px}
+        .content .list .junk{color: red;}
+        .seachreturn{color: #aaa}
+        .bar-header .button-light{color: #fff}
+        .bar-header .button-light:hover{color: #fff}
+        .content .list a{padding-top: 20px;}
+        .content .list a h3{font-weight: bold }
+        .content .list a p>img{height: 15px;width: auto}
+        .content .list a p>span{margin-left: 10px;color: red}
+        .content .list a p .money{color: #663399;font-size: 20px;}
+        .content .list a p .smallfont{color: #663399;font-size: 13px;}
+        .content .list a p .distance{color: #aaa;font-size: 10px;}
+
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp" animation="slide-left-right-ios7">
+<div class="bar bar-header bar-royal ">
+    <button class="button button-icon button-light ion-ios-arrow-left">
+    </button>
+    <h3 class="title">团购</h3>
+</div>
+<div class="content  scroll-content has-header ionic-scoll" style="overflow-y: scroll">
+    <div class="scroll">
+
+  <div class="row text-center listseach">
+      <div class="col active ">全部</div>
+      <div class="col icon nearby">附近 <i class="icon ion-arrow-down-b"></i>
+      </div>
+      <div class="col capacity">智能排序<i class="icon ion-arrow-down-b"></i></div>
+  </div>
+
+        <ul class="list listseacha lista">
+        <li class="item">全部</li>
+        <li class="item">高新技术开发区</li>
+        <li class="item">二七区</li>
+        <li class="item">中原区</li>
+        <li class="item">金水区</li>
+        </ul>
+
+        <ul class="list listseachb lista">
+            <li class="item">好评优先</li>
+            <li class="item">距离最近</li>
+            <li class="item">人气最高</li>
+
+        </ul>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv1.png" alt=""/>
+        <h3>歌秀主题量贩KTV（农业路） </h3>
+        <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+            <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+            <img src="img/star.png" alt="">  <span>4分</span>
+        </p>
+        <p><span class="money">¥29.9<span class="smallfont">起</span> </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv2.png" alt=""/>
+            <h3>苏格廖思KTV </h3>
+            <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt="">  <span>4分</span>
+            </p>
+            <p><span class="money">¥29.9<span class="smallfont">起</span> </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv3.png" alt=""/>
+            <h3>最爱KTV </h3>
+            <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt="">  <span>4分</span>
+            </p>
+            <p><span class="money">¥29.9<span class="smallfont">起</span>
+            </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv4.png" alt=""/>
+            <h3>糖果KTV </h3>
+            <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt="">  <span>4分</span>
+            </p>
+            <p><span class="money">¥29.9<span class="smallfont">起</span> </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv1.png" alt=""/>
+            <h3>糖果KTV </h3>
+            <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt="">  <span>4分</span>
+            </p>
+            <p><span class="money">¥29.9<span class="smallfont">起</span> </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+        <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv1.png" alt=""/>
+        <h3>歌秀主题量贩KTV（农业路） </h3>
+        <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+            <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+            <img src="img/star.png" alt="">  <span>4分</span>
+        </p>
+        <p><span class="money">¥29.9<span class="smallfont">起</span> </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv2.png" alt=""/>
+            <h3>苏格廖思KTV </h3>
+            <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt="">  <span>4分</span>
+            </p>
+            <p><span class="money">¥29.9<span class="smallfont">起</span> </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv3.png" alt=""/>
+            <h3>最爱KTV </h3>
+            <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt="">  <span>4分</span>
+            </p>
+            <p><span class="money">¥29.9<span class="smallfont">起</span>
+            </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv4.png" alt=""/>
+            <h3>糖果KTV </h3>
+            <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt="">  <span>4分</span>
+            </p>
+            <p><span class="money">¥29.9<span class="smallfont">起</span> </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+
+    <div class="list">
+        <a href="#" class="item item-thumbnail-left"><img src="img/ktv1.png" alt=""/>
+            <h3>糖果KTV </h3>
+            <p><img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star_h.png" alt=""><img src="img/star_h.png" alt="">
+                <img src="img/star.png" alt="">  <span>4分</span>
+            </p>
+            <p><span class="money">¥29.9<span class="smallfont">起</span> </span><span class="pull-right distance"><500米</span></p>
+        </a>
+    </div>
+ </div>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.js"></script>
+<script>
+    var app=angular.module("myapp",["ionic"])
+            .controller("mychar",function($scope){
+
+            })
+</script>
+<script>
+    $(".listseach .nearby").toggle(f1,f2);
+    function  f1(){
+        $(".listseach .col").removeClass("active");
+        $(".listseacha").slideDown();
+        $(".listseachb").slideUp();
+        $(".listseach .nearby").addClass("active");
+        $(".listseach .nearby i").removeClass("ion-arrow-down-b");
+        $(".listseach .nearby i").addClass("ion-arrow-up-b");
+        $(".scroll-content").style("overflow-y","hidden");
+    }
+    function f2(){
+        $(".listseacha").slideUp();
+        $(".listseach .nearby i").removeClass("ion-arrow-up-b");
+        $(".listseach .nearby i").addClass("ion-arrow-down-b");
+    }
+
+    $(".listseach .capacity").toggle(f3,f4);
+    function  f3(){
+        $(".listseach .col").removeClass("active");
+        $(".listseacha").slideUp();
+        $(".listseachb").slideDown();
+        $(".listseach .capacity").addClass("active");
+        $(".listseach .capacity i").removeClass("ion-arrow-down-b");
+        $(".listseach .capacity i").addClass("ion-arrow-up-b");
+        $(".content").style("overflow-y","hidden");
+    }
+    function f4(){
+        $(".listseachb").slideUp();
+        $(".listseach .capacity i").removeClass("ion-arrow-up-b");
+        $(".listseach .capacity i").addClass("ion-arrow-down-b");
+    }
+    $(".listseacha li,.listseachb li").click(function(){
+        $(".lista li").removeClass("active")
+        $(this).addClass("active");
+    })
+
+</script>
+</body>
+</html>

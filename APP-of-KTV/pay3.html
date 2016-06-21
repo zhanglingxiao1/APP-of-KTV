@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title>搜索</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<style type="text/css">
+		body{font-size: 12px;background-color: #f6f6f6;}
+			.fr{float: right;}
+			.fl{float: left;}
+            .fsb{font-size: 16px}
+            .fss{font-size: 12px}
+            .fss2{font-size: 13px}
+            .fsmm{font-size: 14px}
+			.mycolor{background: linear-gradient(to right,#e44bf1,#663399 );}
+			.white{color: #FFFFFF;}
+            .promit{color:#663399}
+			.qian{color: #999999;}
+            .bgpromit{background-color: #663399;}
+			.bgwhite{background-color: #FFFFFF;}
+			.item-input-wrapper{background-color: rgba(255,255,255,.3);}
+			.bar ::-webkit-input-placeholder{ color: #fff;}
+			.noboreder{border: none;margin-left: 2px;}
+			.lilast{border-bottom: none;}
+			.lifirst{border-top: none;}
+            .heidivider{padding-top: 20px;padding-bottom: 20px;color: #666666}
+        .chec{padding-top:5px;padding-bottom: 0}
+        .chec .icon{font-size: 35px; margin-top:5px;}
+        .chec .icon.ion-android-radio-button-off{color: #999}
+        .chec span{display: inline-block;position: relative;top: -20px;left:5px}
+
+        .price{color: #663399;font-weight: 600}
+        .price em{font-size: 25px}
+        .toplist{margin-top: 20px}
+        .input{border: 1px solid #e0e0e0;border-radius: 5px;overflow: hidden}
+        input[type="tel"]{display: inline-block;border-left: 1px solid #e0e0e0;}
+        input[type="tel"]:nth-child(1){border-left: none}
+        .popup-container .popup{width: 80%;border-radius: 10px;overflow: hidden}
+        .popup-head{display: none}
+        .popup-body{padding: 0;margin: 0;background-color: #f0eff5;}
+        .popup-body .item{background-color: #f0eff5;}
+        .popup-body .bottm{padding-bottom: 0}
+        .popup-body .row{padding: 0}
+        .item.cardinfo{margin-left: 15px;border-left: none}
+        .item.poptitle{padding-top: 5px;padding-bottom:5px;
+            position: relative;}
+        .poptitle img{width:auto;height: 20px;vertical-align: middle; }
+        .pas{display: inline-block;font-size:18px;color: #999999; }
+            .icon.help{position: absolute;font-size: 20px;right:15px;top: 30%}
+		</style>
+		<script type="text/javascript" src="js/ionic.bundle.js">
+		</script>
+        <script src="js/jquery-1.8.3.min.js"></script>
+	</head>
+	<body ng-app="myapp"ng-controller="myCtrl">
+		<div class="bar barheader mycolor item-input">
+			<button class="button button-icon ion-ios-arrow-back white"></button>
+		<h3 class="title while">支付订单</h3>
+		</div>
+		<div class="content scroll scroll-content has-header"style="overflow-y: scroll;">
+            <div class="list toplist">
+                <div class="item fsmm">麦嘎量贩式KTV158元套餐欢唱时段2选1
+                <span class="item-note promit price ">￥<em>153</em></span>
+                </div>
+                <div class="item chec fsmm">
+                    <img src="img/weixinicon.png" alt=""/>
+                    <i class="icon ion-android-radio-button-on fr assertive"></i>
+                    <span>微信支付</span>
+                </div>
+                <div class="item chec fsmm" >
+                    <img src="img/zhifubaoicon.png" alt=""/>
+                    <i class="icon ion-android-radio-button-off fr"></i>
+                    <span >支付宝支付</span>
+                </div>
+	         </div>
+            <div class="padding">
+         <button class="button bgpromit button-block white"ng-click="toPay()">
+             确认支付</button>
+            </div>
+        </div>
+
+
+        <script type="text/ng-template"id="payTemplate">
+            <ion-item class="poptitle text-center">
+                <div><img src="img/zhifubao.png" alt=""/><span class="pas">支付密码</span></div>
+                 <div>159****2596</div>
+                <i class="icon ion-ios-help-outline help"></i>
+            </ion-item>
+            <ion-item class="lilast"></ion-item>
+            <ion-item class="cardinfo">广发银行信用卡(尾号8197)付款 <i class="icon ion-ios-arrow-right fr fsb"></i></ion-item>
+            <ion-item class="bottm">
+                <div class="input row">
+                    <input type="tel"class="col text-center in0"maxlength="1"ng-focus="initfocus($event)"autofocus />
+                    <input type="tel"class="col text-center in1"maxlength="1"ng-focus="initfocus($event)"ng-click="putit($event)"/>
+                    <input type="tel"class="col text-center in2"maxlength="1"ng-focus="initfocus($event)"/>
+                    <input type="tel"class="col text-center in3"maxlength="1"ng-focus="initfocus($event)"/>
+                    <input type="tel"class="col text-center  in4"maxlength="1"ng-focus="initfocus($event)"/>
+                    <input type="tel"class="col text-center   in5"maxlength="1"ng-focus="initfocus($event)"/>
+                </div>
+            <div class="row">
+            <div class="col col-50 text-center"><button class="button button-light button-block" ng-click="noPay()">取消</button></div>
+                <div class="col col-50 text-center"><button class="button button-positive button-block"ng-click="surePay()">付款</button></div>
+
+            </div>
+            </ion-item>
+        </script>
+        <script>
+            var app=angular.module("myapp",["ionic"])
+                    .controller("myCtrl",function($scope,$ionicPopup){
+                     $scope.index=0
+                     $scope.pass=[];
+                     $scope.code="";
+                     $scope.it="";
+                        var a;
+                     $scope.toPay=function(){
+                     $scope.paypop=$ionicPopup.show({
+                         templateUrl: 'payTemplate',
+                         scope: $scope
+                     })
+                    $scope.noPay=function(){
+                        $scope.paypop.close();
+                    }
+                    $scope.surePay=function(){
+                        $scope.paypop.close();
+                    }
+                         $(document).keydown(function(event){
+                             $scope.code=event.keyCode;
+                             if(event.keyCode==8){
+                                 console.log("dowin"+$scope.index)
+                                 $scope.pass.pop()
+                                 if($scope.index<1){
+                                     $scope.index=1;
+                                 }
+                                 $scope.index--;
+                                 $scope.it.parent().children("input:gt("+$scope.index+")").attr("value","")
+                                 $scope.it.parent().children("input").eq($scope.index).focus();
+
+                             }
+                         });
+                 $scope.putit=function($event){
+                     alert("in")
+                     $($event.target).blur();
+                     $($event.target).parent().children("input").eq(0).focus()
+                     $($event.target).triggerHandler("click");
+                         }
+                 $scope.initfocus=function(event){
+                 $scope.it=$(event.target).parent().children("input").eq($scope.index)
+                        $scope.it.bind("keyup",listenkeyup)
+                        function listenkeyup(){
+                            if($scope.index<0) $scope.index=0;
+                            console.log("upindex"+$scope.index)
+                            if($scope.code!=8){
+              if(!isNaN($scope.it.attr("value"))|$scope.it.attr("value")=="*"){
+                console.log($scope.index+".value"+$(this).attr("value"))
+                                $scope.pass.push($scope.it.attr("value"))
+                $scope.it.parent().children("input").eq($scope.index).attr("value","*")
+    $scope.it.parent().children("input").eq($scope.index).unbind("keyup", listenkeyup);
+                                $scope.index++;
+                                if($scope.index<6) {
+                                    console.log("ok")
+                         $scope.it.parent().children("input").eq($scope.index).focus()
+                                }else{
+                                    return;
+                                }
+                            }else{
+                                alert( $(this).attr("value"))
+                                alert("out")
+                                $(this).attr("value","")
+                            }
+                          }
+                        }
+                    }
+                     }//toshow ed
+               })//app
+            $(function(){
+
+                //单选
+            $(".chec").click(function(){
+                if($(this).find("i.ion-android-radio-button-on.assertive").length!=0){
+                    return;
+                }else{
+                console.log($(".chec").find("i.ion-android-radio-button-on.assertive"))
+                    $(".chec").find("i.ion-android-radio-button-on.assertive").addClass("ion-android-radio-button-off");
+                    $(".chec").find("i.ion-android-radio-button-on.assertive").removeClass("ion-android-radio-button-on assertive")
+                    $(this).find("i").addClass("ion-android-radio-button-on assertive")
+                    $(this).find("i").removeClass("ion-android-radio-button-off")
+                }
+            })//单选ed
+
+            })
+        </script>
+	</body>
+</html>

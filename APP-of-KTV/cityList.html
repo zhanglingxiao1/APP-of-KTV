@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>定位</title>
+    <style>
+        .pull-right{float: right}
+        body{background-color: #f0f0f0;padding-top: 43px}
+        a{text-decoration: none;color: #333;font-size: 12px}
+        .bar.bar-royal{
+            background-color: transparent;
+            background:linear-gradient(to right,#E44BF1 ,#663399);}
+        .bar .item-input-wrapper{ background-color: rgba(255,255,255,.3);}
+        .bar-header .button-light{color: #fff}
+        .bar-header .button-light:hover{color: #fff}
+        .abcArray{ position:fixed; right:15px;top:70px; width: 18px; z-index: 50;
+            text-align: center;height: 500px}
+        .abcArray .active{ background-color: orangered;
+            color: #fff;
+            height: 18px; width: 18px; border-radius: 18px;}
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body  ng-controller="cityCtrl"  ng-app="cityApp" >
+<div class="bar bar-header bar-royal ">
+    <button class="button button-icon button-light ion-ios-arrow-left">
+    </button>
+    <h3 class="title">选择城市</h3>
+</div>
+<ul class="abcArray">
+    <li ng-repeat="x in abcArr" ng-class="{'active':$index==curIndex}" ng-bind="x"
+    ng-click="goABC($index,$event)"></li>
+</ul>
+<ion-content class="has-header" on-scroll="checkPosition()" delegate-handle="mainScroll">
+
+
+    <div class="item item-divider ">
+        <i class="icon ion-ios-location-outline" ></i>
+        定位当前城市
+    </div>
+    <div class="item ">
+
+      <h3>郑州市</h3>
+    </div>
+    <div ng-repeat="city in cityslist.citys">
+        <div class="item item-divider dividerABC" ng-bind="city.key"></div>
+        <ion-list>
+            <ion-item ng-repeat="item in city.list">
+                {{item}}
+            </ion-item>
+        </ion-list>
+    </div>
+
+</ion-content>
+
+<script>
+    var app=angular.module("cityApp",["ionic"])
+            .controller("cityCtrl",function($scope,$http,$ionicScrollDelegate){
+                /*   $scope.cityslist={"citys":[
+                 {"list":["九江","九城"],"key":"j"},{"list":["昆明","开封"],"key":"k"}
+                 ]};*/
+                $scope.cityslist={};
+                $scope.cityslist.citys=[];
+                $scope.abcArr="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+                $http.get("js/cityList.json")
+                        .success(function(data){
+                            for(var i=0;i<$scope.abcArr.length;i++){
+                                var alpha=$scope.abcArr[i];
+                                var obj={};
+                                obj.key=alpha;
+                                obj.list=[]
+
+                                for(var k in data.citys){
+                                    var cap=data.citys[k].pinyin.substr(0,1).toUpperCase();
+                                    if(cap==alpha){
+                                        obj.list.push(data.citys[k].city);
+                                    }
+                                }
+                                $scope.cityslist.citys.push(obj);
+
+                            }
+//                            console.log(data.citys);
+//                            console.log( $scope.cityslist);
+                        })
+                $scope.curIndex=0;
+                $scope.goABC=function(index,event){
+                    $scope.curIndex=index;
+//                    var target=angular.element(event.target).text();
+                    var target=$(event.target).text();
+                    var top=$(".dividerABC:contains('"+target+"')").offset().top;
+                    console.log(top);
+                    $ionicScrollDelegate.$getByHandle('mainScroll').scrollBy(0, top-43);
+
+                }
+                $scope.checkPosition=function(){
+                    var id="";//abc
+                    $(".dividerABC").each(function(){//循环每一个divider
+                        var top=$(this).offset().top;//该元素距离顶部的距离
+
+                        if(top<50){//如果距离小于50
+                            id=$(this).text();//获取文本
+//                       console.log(id);
+                            return ;
+                        }else{
+                            return false;
+                        }
+                    })//for ed
+
+
+                }
+            })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>Title</title>
+    <style>
+        .mt10{margin-top: 10px}
+        .pull-right{float: right}
+        body{background-color: #f0f0f0;padding-top: 43px}
+        a{text-decoration: none;color: #333;font-size: 12px}
+        .bar.bar-royal{
+            background-color: transparent;
+            background:linear-gradient(to right,#E44BF1 ,#663399);}
+        .bar .item-input-wrapper{ background-color: rgba(255,255,255,.3);}
+        .bar-header .button-light{color: #fff}
+        .bar-header .button-light:hover{color: #fff}
+        .title1{
+            margin-top: 10px;
+            background-color: #fff;}
+        .title1 img{
+            height: 20px;
+            width: 20px;}
+        .title1 p{font-size: 14px;color: #000;font-weight: bold}
+        .date{font-size:11px;color:#aaa;font-weight: lighter }
+        .list .team{margin-top: -20px;border: #fff}
+
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp" animation="slide-left-right-ios7">
+<div class="bar bar-header bar-royal ">
+    <button class="button button-icon button-light ion-ios-arrow-left">
+    </button>
+    <h3 class="title">选择城市</h3>
+</div>
+<div class="item text-center item-icon mt10 ">
+    <h3><i class="icon ion-social-snapchat-outline assertive" class="title1"></i>支付成功</h3>
+</div>
+<div class="row title1">
+    <div class=" col col-10 ">
+        <img src="img/houmu.fw.png" alt="" class="pull-right"></div>
+    <div class="col col-80">   <p>麦卡量贩KTV <span class="pull-right date">截止日期：2016年6月30号</span></p>
+    </div>
+
+</div>
+<div class="list">
+    <div class="item">
+        <span>团购劵1</span>
+        <span class="pull-right">1234 3452 1246</span>
+    </div>
+    <div class="item team">
+        <span>团购劵2</span>
+        <span class="pull-right">6745 3423 8976</span>
+    </div>
+    <div class="item text-center"><img src="img/wechatpic.png" alt="">
+    <h3 class="">请店家扫描以上二维码</h3></div>
+</div>
+<div class="row">
+    <div class="col text-center padding"><button class="button button-light button-block ">继续逛逛</button></div>
+    <div class="col text-center padding"><button class="button button-royal button-block">查看订单</button></div>
+</div>
+<script>
+    var app=angular.module("myapp",["ionic"])
+            .controller("mychar",function($scope){
+
+            })
+</script>
+</body>
+</html>

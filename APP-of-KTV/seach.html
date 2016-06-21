@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>Title</title>
+    <style>
+
+        body{background-color: #f0f0f0;}
+        a{text-decoration: none;color: #333;font-size: 12px}
+        .bar.bar-royal{
+            background-color: transparent;
+            background:linear-gradient(to right,#E44BF1 ,#663399);}
+        .bar .item-input-wrapper{ background-color: rgba(255,255,255,.3);}
+        .bar ::-webkit-input-placeholder{ color:#FFF;}
+        .bar .placeholder-icon{
+            color: #fff;}
+        .content{margin-top: 100px}
+        .content .mac img{height: 85px;width: auto;}
+        .seachreturn{color: #aaa}
+
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp" animation="slide-left-right-ios7">
+<div class="bar bar-header item-input-inset bar-royal">
+    <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="请输入商家名">
+    </label>
+    <button class="button button-clear">
+        取消
+    </button>
+</div>
+<div class="content text-center ">
+   <div class="mac"> <a href=""><img src="img/mac.png" alt=""></a></div>
+   <div class="seachreturn"> <p>没有任何搜索历史</p></div>
+</div>
+
+
+<script>
+    var app=angular.module("myapp",["ionic"])
+            .controller("mychar",function($scope){
+
+            })
+</script>
+</body>
+</html>

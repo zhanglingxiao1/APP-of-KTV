@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/ionic.css">
+
+    <title>支付订单</title>
+    <style>
+        .zise{color: #663399}
+        .mt10{margin-top: 10px}
+        .pt10{padding-top: 10px}
+        .star{height: 15px;width: auto}
+        .else p{color: #F15A5A}
+        .pull-right{float: right}
+        body{background-color: #f0f0f0;padding-top: 43px}
+        a{text-decoration: none;color: #333;font-size: 12px}
+        .bar.bar-royal{
+            background-color: transparent;
+            background:linear-gradient(to right,#E44BF1 ,#663399);}
+        .bar .item-input-wrapper{ background-color: rgba(255,255,255,.3);}
+        .bar-header .button-light{color: #fff}
+        .bar-header .button-light:hover{color: #fff}
+        .list{margin-bottom: 0;}
+        .list span{font-weight: bold}
+        .list img{height: 30px;  width:auto; }
+      .money{font-size: 25px}
+        .list .item img{
+            vertical-align: middle;margin-right: 20px}
+        .inputs input{border: 1px solid #aaa;text-align: center}
+        .head{position: fixed;left: 50px;top: 5px;vertical-align: middle;color: #aaa;font-size:18px}
+        .head img{height: 20px;width: auto;position: relative;top:5px;
+            left:0;}
+        .head .contrant{font-size: 12px;margin-left: 40px}
+        .head i{margin-left: 30px}
+        .popup-container .popup{border-radius: 10px}
+        .popup-container .popup .list{height: 25px;width: 100%}
+        .popup-container .popup .list .null{width: 90%;margin-left: 5%;border-bottom: 1px solid #ccc;height: 100%}
+        .popup-head{height: 50px;border-bottom: 1px solid #ccc}
+        .popup-container .popup .bankcard{width: 90%;margin-left: 5%;}
+        .popup-container .popup .bankcard i{font-size: 14px}
+    </style>
+    <script src="js/ionic.bundle.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body  ng-controller="mychar"  ng-app="myapp" animation="slide-left-right-ios7">
+<div class="bar bar-header bar-royal ">
+    <button class="button button-icon button-light ion-ios-arrow-left">
+    </button>
+    <h3 class="title">支付订单</h3>
+</div>
+<div class="content ">
+<div class="list mt10">
+    <div class="item">
+        <p>麦卡KTV欢唱套餐2选1<span class="pull-right zise"> <span >¥</span>
+            <span class="  money">153</span></span></p>
+    </div>
+    <div class="item item-divider">
+        <h3>选择支付方式</h3>
+    </div>
+</div>
+<div class="list ">
+    <div class="item item-icon-right pay"><h3><img src="img/weixinicon.png" alt=""><span class="">微信支付</span>
+        <i class="icon ion-ios-circle-filled assertive"></i></h3>
+    </div>
+    <div class="item item-icon-right pay1" >
+        <h3><img src="img/zhifubaoicon.png" alt=""><span class="">支付宝支付</span>
+    <i class="icon ion-ios-circle-outline dark" ></i></h3></div>
+</div>
+<div class="padding mt10">
+<button class="button button-block button-positive" ng-click="pro()">确认支付</button>
+</div>
+</div>
+<script type="text/ng-template" id="pophtml">
+<p class="head"><img src="img/zhifubao.png" alt="">支付密码
+    <i class="icon ion-ios-help-outline pull-right"></i>
+    <br>    <span class="contrant">135****4243</span>
+</p>
+<div class="list">
+<div class="null"></div>
+</div>
+<div class="bankcard">
+<h6>广发信用银行卡（尾号8179）付款 <i class="icon ion-ios-arrow-right pull-right"></i> </h6></div>
+<div class="row inputs"><input type="password"><input type="password">
+    <input type="password"><input type="password"><input type="password"><input type="password"></div>
+
+</script>
+<script>
+    var app=angular.module("myapp",["ionic"])
+            .controller("mychar",function($scope,$ionicPopup){
+                $scope.pro=function(){ $ionicPopup.prompt({
+                    title: '',
+                    templateUrl:"pophtml",
+//                    inputType: 'password',
+//                    inputPlaceholder: 'Your password',
+                    "okText":"确定",
+                    "cancelText":"取消"
+                }).then(function(res) {
+                    console.log('Your password is', res);
+                });
+                }
+            })
+</script>
+<script>
+
+$(".pay").click(function(){
+    $(".pay h3 i").addClass("ion-ios-circle-filled assertive");
+    $(".pay h3 i").removeClass("ion-ios-circle-outline dark");
+    $(".pay1 h3 i").addClass("ion-ios-circle-outline dark");
+    $(".pay1 h3 i").removeClass("ion-ios-circle-filled");
+})
+$(".pay1").click(function(){
+    $(".pay1 h3 i").addClass("ion-ios-circle-filled assertive");
+    $(".pay1 h3 i").removeClass("ion-ios-circle-outline dark");
+    $(".pay h3 i").addClass("ion-ios-circle-outline dark");
+    $(".pay h3 i").removeClass("ion-ios-circle-filled");
+})
+
+</script>
+</body>
+</html>
